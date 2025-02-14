@@ -21,7 +21,7 @@ CREATE_FLIGHTS_TABLE = """
         FlightOrigin TEXT NOT NULL,
         OriginCode TEXT NOT NULL,
         FlightDestination TEXT NOT NULL,
-        DestCode TEXT NOT NULL,
+        DestinationCode TEXT NOT NULL,
         DepartureTime TEXT NOT NULL,
         ArrivalTime TEXT NOT NULL,
         PilotID INTEGER,
@@ -33,7 +33,7 @@ CREATE_FLIGHTS_TABLE = """
     """
 
 INSERT_FLIGHT = """
-    INSERT INTO FlightInfo (FlightOrigin, OriginCode, FlightDestination, DestCode, DepartureTime, ArrivalTime, Status) 
+    INSERT INTO FlightInfo (FlightOrigin, OriginCode, FlightDestination, DestinationCode, DepartureTime, ArrivalTime, Status) 
     VALUES (?, ?, ?, ?, ?, ?, ?)
     """
 
