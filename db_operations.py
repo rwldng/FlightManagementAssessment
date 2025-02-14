@@ -26,7 +26,8 @@ class DBOperations:
         if column not in valid_columns:
             print("Invalid search column.")
             return []
-        self.cur.execute(f"SELECT * FROM FlightInfo WHERE {column} LIKE ?", (f"%{value}%",))
+
+        self.cur.execute(f"SELECT * FROM FlightInfo WHERE LOWER({column}) LIKE LOWER(?)", (f"%{value}%",))
         return self.cur.fetchall()
 
     def insert_flight(self):
